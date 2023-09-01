@@ -9,9 +9,14 @@ timer.freeze();
 // Loop para o contador
 var intervalo = setInterval(drawTime, 100);
 
+// Musica
+var musica = document.getElementById("music");
+
 function endTimer() {
     clearInterval(intervalo);
     $("#confetes").css("display", "block");
+    $(".steve").css("display", "block");
+    $(".parrot").css("display", "block");
 
     var ip = "boschinhos.apexmc.co";
 
@@ -26,14 +31,21 @@ function endTimer() {
 
     // Função para copiar o IP
     $(document).on("click", function() {
+        if (musica.paused)
+            musica.play()
+                  .catch(console.log("sla oq q deu kk"));
         navigator.clipboard.writeText(ip).then(function() {
             alert("IP copiado.. Bora jogar!!!");
         });
     });
 }
 
-function countdown() {
-    if(timer.getSecond(target) <= 0) {
+function countdown(oldtime) {
+    if (musica.paused && oldtime > 0)
+        musica.play()
+              .catch(console.log("perdeu o timing mané kk"));
+
+    if(oldtime <= 0) {
         $("#countdown").css("display", "none");
         $("#countdown").html("");
         endTimer();
@@ -46,7 +58,7 @@ function countdown() {
     $("#countdown").finish().css("font-size", "10vw");
     $("#countdown").css("opacity", "1");
     $("#countdown").css("display", "block");
-    $("#countdown").html(timer.getSecond(target));
+    $("#countdown").html(oldtime);
     $("#countdown").animate({
         fontSize: "7vw",
         opacity: 0.5
@@ -58,7 +70,7 @@ var oldtime = 0;
 function drawTime() {
     if(timer.getSecond(target) <= 10 && oldtime != timer.getSecond(target)) {
         oldtime = timer.getSecond(target);
-        countdown();
+        countdown(oldtime);
     } else {
         var time = timer.getTime(target);
     
