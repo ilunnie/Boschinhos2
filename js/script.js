@@ -1,13 +1,16 @@
 import * as timer from './timer.js'
 
 // Data do lançamento (meses começam em 0)
-var target = new Date(2023, 8, 1, 23, 0o0, 0o0);
+var target = new Date(2023, 8, 1, 18, 38, 0o0);
 
 // Sincroniza os tempos
 timer.freeze();
 
 // Loop para o contador
 var intervalo = setInterval(drawTime, 100);
+
+// Musica
+var musica = document.getElementById("music");
 
 function endTimer() {
     clearInterval(intervalo);
@@ -33,6 +36,9 @@ function endTimer() {
 }
 
 function countdown() {
+    if (musica.paused)
+        musica.play().catch("perdeu o timing mané kk")
+
     if(timer.getSecond(target) <= 0) {
         $("#countdown").css("display", "none");
         $("#countdown").html("");
