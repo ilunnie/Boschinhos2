@@ -15,6 +15,8 @@ var musica = document.getElementById("music");
 function endTimer() {
     clearInterval(intervalo);
     $("#confetes").css("display", "block");
+    $(".steve").css("display", "block");
+    $(".parrot").css("display", "block");
 
     var ip = "boschinhos.apexmc.co";
 

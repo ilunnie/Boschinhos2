@@ -50,3 +50,17 @@ footer {
 #countdown {
     display: none;
 }
+
+.steve {
+    display: none;
+    position: absolute;
+    width: 15%;
+}
+
+.parrot {
+    z-index: 1;
+    display: none;
+    position: absolute;
+    bottom: 18%;
+    width: 10%;
+}
