@@ -1,0 +1,52 @@
+html, body {
+    background: linear-gradient(180deg, rgba(41, 138, 196, 1), rgba(124, 205, 255, 1));
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: -5px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#title {
+    font-size: 7.5vw;
+    margin: 0;
+}
+
+#time {
+    font-size: 6vw;
+    margin: 0;
+}
+
+#confetes {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#countdown {
+    display: none;
+}
