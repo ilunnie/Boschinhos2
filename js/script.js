@@ -1,7 +1,7 @@
 import * as timer from './timer.js'
 
 // Data do lançamento (meses começam em 0)
-var target = new Date(2023, 8, 1, 21, 41, 15);
+var target = new Date(2023, 8, 1, 23, 0o0, 0o0);
 
 // Sincroniza os tempos
 timer.freeze();
