@@ -1,7 +1,7 @@
 import * as timer from './timer.js'
 
 // Data do lançamento (meses começam em 0)
-var target = new Date(2023, 8, 1, 23, 0o0, 0o0);
+var target = new Date(2023, 8, 1, 21, 8, 15);
 
 // Sincroniza os tempos
 timer.freeze();
@@ -21,12 +21,30 @@ function endTimer() {
     var ip = "boschinhos.apexmc.co";
 
     $("#title").html(ip);
-    $("#title").css("font-size", "5vw");
+    $("#title").css("font-size", "3vw");
+    $("#title").css("opacity", "0.5");
     $("#title").css("display", "block");
+    $("#title").animate({
+        fontSize: "5vw",
+        opacity: 1
+    }, 100);
 
     $("#time").html("Clique para copiar o IP");
     $("#time").css("font-size", "1.5vw");
+    $("#time").css("opacity", "0.5");
     $("#time").css("display", "block");
+    $("#time").animate({
+        opacity: 1
+    }, 100);
+
+    $(".steve").animate({
+        width: "15%",
+        opacity: 1
+    }, 200);
+
+    $(".parrot").animate({
+        opacity: 1
+    }, 200);
 
 
     // Função para copiar o IP

@@ -52,15 +52,19 @@ footer {
 }
 
 .steve {
+    z-index: 1;
     display: none;
-    position: absolute;
-    width: 15%;
+    position: fixed;
+    top: 50%;
+    width: 10%;
+    opacity: 0.5;
 }
 
 .parrot {
     z-index: 1;
     display: none;
-    position: absolute;
-    bottom: 18%;
-    width: 10%;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-110%);
+    opacity: 0.5;
 }
