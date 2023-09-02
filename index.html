@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +38,9 @@
         }
     </style>
 </head>
+
 <body>
+    <img src="img/start.jpg" id="start">
     <header>
         <img src="img/borda superior.png" style="width: 100%; height: auto;">
     </header>
@@ -48,24 +51,38 @@
     <div id="content">
         <h1 id="title"></h1>
         <h1 id="time"></h1>
-        
+
         <h2 id="countdown"></h2>
     </div>
 
     <img src="img/red_parrot.gif" alt="" class="parrot" style="right: 25%; width: 10%;">
     <img src="img/stevedance.gif" alt="" class="steve" style="right: 0%; transform: translate(-40%, -50%);">
-    
+
     <audio src="sound/sndtimed.mp3" id="music"></audio>
+    <audio src="sound/click.mp3" id="click"></audio>
 
     <footer>
         <img src="img/borda inferior.png" style="width: 100%; height: auto;">
     </footer>
 
-    <script type="module" src="js/script.js"></script>
-
     <img src="img/confetti.webp" id="confetes">
 
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+        document.addEventListener('click', function () {
+            var click = document.getElementById("click");
+            click.play();
+            var startbutton = document.getElementById("start");
+            startbutton.style.display = "none";
+
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.src = 'js/script.js';
+            document.head.appendChild(script);
+        });
+    </script>
 </body>
+
 </html>
